@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet">
+
+  <style>
+    body,
+    html {
+      margin: 0px;
+        padding: 0px;
+        font-family: "cooper black", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        background-image: url();
+        backdrop-filter: blur(5px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin-right: 1%;
+      margin-left: 1%;
+      background-color: LIGHT orange;
+      border-radius: 15px;
+
+    }
+
+    .page-title {
+      background-color: beige;
+      padding: 25px;
+      text-align: center;
+      border-radius: 15px;
+
+    }
+
+    .page-title img {
+      height: 150px;
+      width: 150px;
+    }
+
+    .intro {
+      color: burlywood;
+      width: 50px;
+    }
+
+    .nav {
+      background-color: aliceblue;
+      text-align: left;
+      display: block;
+      color: #ffffff;
+      border-radius: 15px;
+      gap: 10px;
+    }
+
+    .nav a,
+    .nav label {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 8px;
+      border-radius: 15px;
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      background-color: gray;
+      color: rgb(22, 21, 21);
+    }
+
+    .right {
+      float: right;
+    }
+    .body {
+      flex-grow: 1;
+      padding: 20px;
+      background-color: PINK;
+      text-align: center;
+      border-radius: 15px;
+
+    }
+
+    .footer {
+      background-color: gray;
+      padding: 13px;
+      text-align: center;
+      border-radius: 15px;
+    }
+
+    #outerbox {
+      width: 450px;
+      overflow: hidden;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+      width: 450px;
+      margin: 50px auto;
+
+    }
+
+    #sliderbox {
+      position: relative;
+      display: flex;
+      width: 4500px;
+      height: 450px;
+      animation: slider 20s infinite;
+    }
+
+    @keyframes slider {
+
+      0%,
+      10% {
+        left: 0;
+      }
+
+      12.5%,
+      22.5% {
+        left: -450px;
+      }
+
+      25%,
+      35% {
+        left: -900px;
+      }
+
+      37.5%,
+      47.5% {
+        left: -1350px;
+      }
+
+      50%,
+      60% {
+        left: -1800px;
+      }
+
+      62.5%,
+      72.5% {
+        left: -2250px;
+      }
+
+      75%,
+      85% {
+        left: -2700px;
+      }
+
+      87.5%,
+      97.5% {
+        left: -3150px;
+      }
+
+      100% {
+        left: -3600px;
+      }
+    }
+
+    #sliderbox img {
+      width: 450px;
+      height: 450px;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .modal-content h2,
+    .register-modal-content h2 {
+      text-align: center;
+    }
+
+
+    .open-modal {
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      letter-spacing: 1px;
+      padding: 10px;
+      border-radius: 5px;
+      align-items: center;
+      float: right;
+    }
+
+    .open-modal-hover {
+      background-color: pink;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-toggle {
+      display: none;
+    }
+
+    .modal-toggle:checked+.modal {
+      display: block;
+    }
+
+    .modal-content {
+      background-color: #436850;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid;
+      width: 300px;
+      border-radius: 5px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: greenyellow;
+    }
+
+    .modal-content form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .modal-content input[type="text"],
+    .modal-content input[type="password"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .modal-content button[type="submit"] {
+      background-color: white;
+      border: none;
+      padding: 10px;
+      color: black;
+      border-radius: 5px;
+      width: 100px;
+      cursor: pointer;
+    }
+
+    .modal-content button[type="submit"]:hover {
+      background-color: pink;
+    }
+
+    .ask {
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      display: flex;
+      gap: 5px;
+    }
+
+    .ask label {
+      color: blue;
+    }
+
+
+    .register-open-modal {
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      letter-spacing: 1px;
+      padding: 10px;
+      border-radius: 5px;
+      align-items: center;
+    }
+
+    .register-open-modal-hover {
+      background-color: pink;
+    }
+
+    .register-modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .register-modal-toggle {
+      display: none;
+    }
+
+    .register-modal-toggle:checked+.register-modal {
+      display: block;
+    }
+
+    .register-modal-content {
+      background-color: #436850;
+      margin: 3% auto;
+      padding: 20px;
+      border: 1px solid palegreen;
+      width: 300px;
+      border-radius: 5px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .close {
+      color: black;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: lightblue;
+    }
+
+    .register-modal-content form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .register-modal input[type="text"],
+    .register-modal input[type="password"],
+    .register-modal input[type="date"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid black;
+      border-radius: 4px;
+      width: 150px;
+    }
+
+    .register-modal-content button[type="submit"] {
+      background-color: cadetblue;
+      border: none;
+      padding: 10px;
+      color: black;
+      width: 100px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .register-modal-content button[type="submit"]:hover {
+      background-color: pink;
+    }
+
+    .ask {
+      justify-content: end;
+      flex-direction: row;
+      align-items: center;
+      display: flex;
+      gap: 5px;
+    }
+
+    .ask label {
+      color: pink;
+      float: right;
+    }
+
+    .register-modal-content span {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .register-modal-content label {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      width: 50px;
+    }
+
+    .modal-content span {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+.body p{
+  color:#aaa;
+  width: 400px;
+  height: 100px;
+  margin-top: 100px;
+  margin-left: 220px;
+  font-weight: bold;
+  font-size: 50px;
+  font-family: lucida;
+  text-align: justify;
+}
+.des{
+  color: black;
+  width: 650px;
+  height: 100px;
+  margin-top: -20px;
+  margin-left: 220px;
+  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: justify;
+  float: left;
+}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page">
+      <img src="Black_and_White_Minimalist_Professional_Initial_Logo-removebg-preview.png">
+    </div>
+  
+    <div class="nav">
+      <a href="">HOME</a>
+      <a href="mytipanshop.html">PRODUCT</a>
+      <a href="">SHOP NOW!</a>
+      <a href="myabout.html">ABOUT</a>
+      
+      <div class="right">
+      <label for="modal-toggle">
+        LOG IN</label>
+      <label for="register-modal-toggle">
+        REGISTER</label>
+        </div>
+
+      <input type="checkbox" id="modal-toggle" class="modal-toggle">
+      <div class="modal">
+        <div class="modal-content">
+          <label for="modal-toggle" class="close">&times;</label>
+          <h2>Log-in Form</h2>
+          <div class="col">
+            <form>
+              <span>
+                <input type="text" id="username" name="username" required>
+
+                <label for="username">Username</label></span>
+              <span>
+                <input type="password" id="password" name="password" required>
+
+                <label for="password">Password</label></span>
+
+              <button type="submit" align="center">Log-in</button>
+          </div>
+          <div class="ask">
+            <label for="register-modal-toggle">Register here!</label>
+          </div>
+          </form>
+        </div>
+      </div>
+
+      <input type="checkbox" id="register-modal-toggle" class="register-modal-toggle">
+      <div class="register-modal">
+        <div class="register-modal-content">
+          <label for="register-modal-toggle" class="close">&times;</label>
+          <h2>Registration</h2>
+          <form>
+            <div class="col">
+              <span>
+                <label for="email">Email Address</label>
+                <input type="text" id="email" name="email" required>
+              </span>
+              <span>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </span>
+              <span>
+                <label for="username">Last Name</label>
+                <input type="text" id="lastname" name="lastname" required>
+              </span>
+              <span>
+                <label for="birthdate">Birthdate</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+              </span>
+              <span>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required></span>
+              <span>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+              </span>
+              <button type="submit" align="center">Save</button>
+            </div>
+            <div class="ask">
+              <label for="modal-toggle">Log-in</label>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="body">
+      <div class="all">
+      <div id="outerbox">
+        <div id="sliderbox">
+          <img src="number 14.png">
+          <img src="number 7.png">
+          <img src="number 1.png">
+          <img src="number 29.png">
+          <img src="number 28.png">
+          <img src="number 23.png">
+          <img src="number 19.png">
+          <img src="number 11.png">
+          <img src="number 8.png">
+          <img src="number 3.png">
+        </div>
+      </div>
+      <p>FEEL CONFIDENT AND COMFORTABLE</p>
+      <div class="des">
+        CHOOSE YOURE UNDIES THAT FIT TO YOURE BODY!
+      </div>
+    </div>
+  </div>
+    <div class="footer">
+      @cambiaange26cute
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+
+        }
+
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+
+        }
+
+        .nav a {
+            color: black;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            background-color:gray;
+            color: #d9c7a3;
+        }
+
+
+        .gallery {
+            perspective: 1000px;
+        }
+
+        .gallery-container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 15s infinite linear;
+
+        }
+
+        .gallery-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-image:nth-child(1) {
+            transform: rotateY(0deg);
+        }
+
+        .gallery-image:nth-child(2) {
+            transform: rotateY(90deg);
+        }
+
+        .gallery-image:nth-child(3) {
+            transform: rotateY(180deg);
+        }
+
+        .gallery-image:nth-child(4) {
+            transform: rotateY(-90deg);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 1200px;
+            gap: 15px;
+            margin: 0 0 0 70px;
+        }
+
+        .thumbnail {
+            border-radius: 8px;
+            transition: transform 0.3s;
+            object-fit: contain;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        .thumbnail img {
+            width: 190px;
+            height: 190px;
+            object-fit: contain;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.2);
+        }
+
+        .description {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 7);
+            color: beige;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 10px;
+            padding: 1px;
+            opacity: 0;
+            padding: 5px;
+            position: absolute;
+            transition: opacity 0.3s;
+        }
+
+        .thumbnail:hover .description {
+            opacity: 1;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: row-reverse;
+            background-color:purple;
+            align-items: center;
+            padding: 20px;
+            align-content: space-between;
+            border-radius: 100px 100PX 100PX 100px;
+        }
+
+        .category-title {
+            text-align: center;
+            color: white;
+            letter-spacing: 3px;
+            width: 200px;
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="myhome.html">Home</a>
+        <a href="product.html">Products</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+    </div>
+
+    <body>
+
+        <div class="gallery">
+            <CENTER>
+                <div class="gallery-container">
+                    <div class="gallery-image"><img src="number 3.png" alt="image1">
+                    </div>
+                    <div class="gallery-image"><img src="number 6.png" alt="image2">
+                    </div>
+                    <div class="gallery-image"><img src="number 24.png" alt="image3">
+                    </div>
+                    <div class="gallery-image"><img src="number 22.png" alt="image4">
+                    </div>
+                </div>
+            </CENTER>
+        </div>
+
+        <div class="category">
+            <h1 class="category-title">ADULT<br>BRIEFS AND PANTIES</h1>
+            <div class="thumbnail-gallery">
+                <div class="thumbnail"><a href="span 1.html"><img src="number 1.png" alt="Thumbnail 1"></a>
+                    <div class="description">HANFORD</div>
+                </div>
+                <div class="thumbnail"><a href="span 2.html"><img src="number 2.png" alt="Thumbnail 2"></a>
+                    <div class="description">TOMMY JOHN</div>
+                </div>
+                <div class="thumbnail"><a href="span 3.html"><img src="number 3.png" alt="Thumbnail 3"></a>
+                    <div class="description">TOMMY HILFINGER</div>
+                </div>
+                <div class="thumbnail"><a href="span 4.html"><img src="number 4.png" alt="Thumbnail 4"></a>
+                    <div class="description">BLUE BELLA</div>
+                </div>
+                <div class="thumbnail"><a href="span 5.html"><img src="number 5.png" alt="Thumbnail 5"></a>
+                    <div class="description">OMNI</div>
+                </div>
+                <div class="thumbnail"><a href="span 6.html"><img src="number 6.png" alt="Thumbnail 6"></a>
+                    <div class="description">BENCH BODY</div>
+                </div>
+                <div class="thumbnail"><a href="span 7.html"><img src="number 7.png" alt="Thumbnail 7"></a>
+                    <div class="description">SO-EN LACE</div>
+                </div>
+                <div class="thumbnail"><a href="span 8.html"><img src="number 8.png" alt="Thumbnail 8"></a>
+                    <div class="description">SEEMLESS</div>
+                </div>
+                <div class="thumbnail"><a href="span 9.html"><img src="number 9.png" alt="Thumbnail 9"></a>
+                    <div class="description">MANUFIE HIGH WAIST</div>
+                </div>
+                <div class="thumbnail"><a href="span 10.html"><img src="number 10.png" alt="Thumbnail 10"></a>
+                    <div class="description">MICKEY MOUSE PANTY</div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <br>
+        <div class="category">
+            <h1 class="category-title">KIDS<br>PANTIES<br>BRIEFS</h1>
+            <div class="thumbnail-gallery">
+                <div class="thumbnail"><a href="span 11.html"><img src="number 11.png" alt="Thumbnail 11"></a>
+                    <div class="description">MICKEY MOUSE PANTY</div>
+                </div>
+                <div class="thumbnail"><a href="span 12.html"><img src="number 12.png" alt="Thumbnail 12"></a>
+                    <div class="description">BUNNY PANTY</div>
+                </div>
+                <div class="thumbnail"><a href="span 13.html"><img src="number 13.png" alt="Thumbnail 13"></a>
+                    <div class="description">SO-EN STRAWBERRY</div>
+                </div>
+                <div class="thumbnail"><a href="span 14.html"><img src="number 14.png" alt="Thumbnail 14"></a>
+                    <div class="description">SO-EN FLOWER</div>
+                </div>
+                <div class="thumbnail"><a href="span 15.html"><img src="number 15.png" alt="Thumbnail 15"></a>
+                    <div class="description">NEXT PANTY</div>
+                </div>
+                <div class="thumbnail"><a href="span 16.html"><img src="number 16.png" alt="Thumbnail 16"></a>
+                    <div class="description">BENTEN BRIEF</div>
+                </div>
+                <div class="thumbnail"><a href="span 17.html"><img src="number 17.png" alt="Thumbnail 17"></a>
+                    <div class="description">NEXT BRIEF</div>
+                </div>
+                <div class="thumbnail"><a href="span 18.html"><img src="number 18.png" alt="Thumbnail 18"></a>
+                    <div class="description">CALVIN KLEIN BRIEF</div>
+                </div>
+                <div class="thumbnail"><a href="span 19.html"><img src="number 19.png" alt="Thumbnail 19"></a>
+                    <div class="description">UNDER ARMOR BRIEF</div>
+                </div>
+                <div class="thumbnail"><a href="span 20.html"><img src="number 20.png" alt="Thumbnail 20"></a>
+                    <div class="description">SPANDEX</div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <br>
+
+        <div class="category">
+            <h1 class="category-title">BOXERS<br>BIKINIES</h1>
+            <div class="thumbnail-gallery">
+                <div class="thumbnail"><a href="span 21.html"><img src="number 21.png" alt="Thumbnail 21"></a>
+                    <div class="description">PENN</div>
+                </div>
+                <div class="thumbnail"><a href="span 22.html"><img src="number 22.png" alt="Thumbnail 22"></a>
+                    <div class="description">CELINE</div>
+                </div>
+                <div class="thumbnail"><a href="span 23.html"><img src="number 23.png" alt="Thumbnail 23"></a>
+                    <div class="description">TOMFORD</div>
+                </div>
+                <div class="thumbnail"><a href="span 24.html"><img src="number 24.png" alt="Thumbnail 24"></a>
+                    <div class="description">TOMMY JOHN</div>
+                </div>
+                <div class="thumbnail"><a href="span 25.html"><img src="number 25.png" alt="Thumbnail 25"></a>
+                    <div class="description">TOMMY HILFINGER</div>
+                </div>
+                <div class="thumbnail"><a href="span 26.html"><img src="number 26.png" alt="Thumbnail 26"></a>
+                    <div class="description">YSL LACE</div>
+                </div>
+                <div class="thumbnail"><a href="span 27.html"><img src="number 27.png" alt="Thumbnail 27"></a>
+                    <div class="description">ODDBALLS</div>
+                </div>
+                <div class="thumbnail"><a href="span 28.html"><img src="number 28.png" alt="Thumbnail 28"></a>
+                    <div class="description">JOCKMAIL</div>
+                </div>
+                <div class="thumbnail"><a href="span 29.html"><img src="number 29.png" alt="Thumbnail 29"></a>
+                    <div class="description">CELINE</div>
+                </div>
+                <div class="thumbnail"><a href="span 30.html"><img src="number 30.png" alt="Thumbnail 30"></a>
+                    <div class="description">HELEN PIECE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        </div>
+
+    </body>
+
+</body>
+
+</html>
